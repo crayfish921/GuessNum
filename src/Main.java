@@ -21,13 +21,14 @@ public class Main {
 
         while (tries > 0) {
             System.out.println("Please enter your guess in a numbers range of 1 to " + guessRange);
-            int guess = 0;
+            int guess;
 
             try {
                 guess = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Input a number please");
-                warningRaised = true;
+                scanner.next();
+                continue;
             }
 
             if (guess == randomizedNumber) {
