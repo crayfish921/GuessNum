@@ -7,8 +7,8 @@ public class Main {
     private static Random random = new Random();
 
     public static void main(String[] args) {
-        int tries = 5;
         int guessRange = 50;
+        int tries = guessRange / 10;
         int randomizedNumber = random.nextInt(guessRange) + 1;
         int hintRegion = guessRange / 2;
 
@@ -26,7 +26,7 @@ public class Main {
                 guess = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Input a number please");
-                scanner.nextInt();
+                scanner.next();
                 continue;
             }
 
