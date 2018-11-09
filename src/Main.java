@@ -12,7 +12,6 @@ public class Main {
         int randomizedNumber = random.nextInt(guessRange) + 1;
         int hintRegion = guessRange / 2;
 
-        boolean warningRaised = false;
         boolean hintUsed = false;
         boolean useRegularHint = true;
 
@@ -27,7 +26,7 @@ public class Main {
                 guess = scanner.nextInt();
             } catch (InputMismatchException e) {
                 System.out.println("Input a number please");
-                scanner.next();
+                scanner.nextInt();
                 continue;
             }
 
