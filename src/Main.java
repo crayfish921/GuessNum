@@ -8,6 +8,7 @@ public class Main {
     private static Scanner scanner = new Scanner(System.in);
     private static Random random = new Random();
     private static List<GameResult> gameResults = new ArrayList<>();
+    private static Set<String> validKeys = Set.of("y", "Y", "n", "N");
 
     public static void main(String[] args) {
         loadResults();
@@ -47,7 +48,7 @@ public class Main {
             try {
                 pressedKey = scanner.next();
 
-                if (pressedKey.equals("Y") || pressedKey.equals("y") || pressedKey.equals("n") || pressedKey.equals("N")) {
+                if (validKeys.contains(pressedKey)) {
                     validKeyEntered = true;
                 } else {
                     System.out.println("Wrong key entered");
